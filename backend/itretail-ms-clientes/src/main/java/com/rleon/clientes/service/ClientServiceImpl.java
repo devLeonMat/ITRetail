@@ -3,6 +3,9 @@ package com.rleon.clientes.service;
 import com.rleon.clientes.dao.ClientDao;
 import com.rleon.clientes.model.Client;
 import com.rleon.clientes.model.Kpi;
+
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.rleon.clientes.utils.Validate;
@@ -12,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClientServiceImpl  implements ClientService{
+public class ClientServiceImpl implements ClientService {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -29,6 +32,13 @@ public class ClientServiceImpl  implements ClientService{
             newClient.setApellidoMaterno(user.getApellidoMaterno());
             newClient.setEdad(user.getEdad());
             newClient.setFechaDeNacimiento(user.getFechaDeNacimiento());
+            newClient.setFechaPosFallecimiento(calcularEsperanzaVida(newClient));
+
+            /** esperanza de vida (podriamos hacerlo configurable, pero desconozco como calculan en su compania la esperanza de vida, pero esto puede agregarse a esta logica)
+             pondremos como esperanza de vida en peru 80 años
+             **/
+
+
             return userDao.save(newClient);
 
         } catch (Exception e) {
@@ -72,4 +82,13 @@ public class ClientServiceImpl  implements ClientService{
         }
         return kpi;
     }
+
+    @Deprecated
+    private Date calcularEsperanzaVida(Client cliente){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(cliente.getFechaDeNacimiento());
+        calendar.add(Calendar.YEAR, 80);
+        return calendar.getTime();
+    }
+
 }
