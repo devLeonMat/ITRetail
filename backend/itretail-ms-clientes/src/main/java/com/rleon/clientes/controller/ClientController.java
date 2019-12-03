@@ -33,7 +33,7 @@ public class ClientController {
         this.clientServ = clientServ;
     }
 
-    @GetMapping(value = "status")
+    @GetMapping(value = "/status")
     String checkStatus() {
         return "ok";
     }
