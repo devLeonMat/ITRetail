@@ -16,9 +16,23 @@ but i love IntelliJ IDEA because I can work Backend and Frontend in a single ide
 Then execute maven update for download the dependencies.
 
 ## Testing
+the swagger documentation is
+http://itretailmscliente-env.g3aeth4psa.us-east-1.elasticbeanstalk.com/itretail/swagger-ui.html#/client-controller/
 
-For Testing the Microservice is deployed in AWS and this is the endpoint, copy in postman 
+For Testing the Microservice is deployed in AWS and this is the endpoint, copy in postman the next
+for new Client
 
+body request
+
+ {
+        "nombres": "juan jose",
+        "apellidoPaterno": "velasco",
+        "apellidoMaterno": "del rio",
+        "edad":17,
+        "fechaDeNacimiento": "1998-12-10"
+}
+
+### FRONTEND
 
 
  
