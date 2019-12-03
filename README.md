@@ -22,7 +22,10 @@ http://itretailmscliente-env.g3aeth4psa.us-east-1.elasticbeanstalk.com/itretail/
 For Testing the Microservice is deployed in AWS and this is the endpoint, copy in postman the next
 for new Client
 
-body request
+
+[source,java]
+----
+// body request
 
  {
         "nombres": "juan jose",
@@ -31,6 +34,8 @@ body request
         "edad":17,
         "fechaDeNacimiento": "1998-12-10"
 }
+----
+
 
 ### FRONTEND
 
