@@ -10,7 +10,7 @@ The microservice was developed in Java 11 with Spring Boot and to save informati
 == Resources
 * Java 11
 * Spring Boot
-* AWS
+* AWS - Elastic Beanstalk
 * MongoDB Cloud
 
 == Getting Started
