@@ -5,12 +5,12 @@
 
 = BACKEND
 
-The microservice was developed in Java 11 with Spring Boot and to save information I use a no relational database - MongoDB
+The microservice was developed in Java 8 with Spring Boot and to save information I use a no relational database - MongoDB
 
 == Resources
 * Java 11
 * Spring Boot
-* AWS
+* AWS - Elastic Beanstalk
 * MongoDB Cloud
 
 == Getting Started
