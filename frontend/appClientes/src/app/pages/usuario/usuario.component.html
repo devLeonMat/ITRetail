@@ -1,0 +1,65 @@
+<h1>Usuario <small>Nombre de Usuario</small> </h1>
+<hr>
+
+<div class="row text-right">
+  <div class="col">
+    <button class="btn btn-danger" routerLink="/usuarios">
+      <i class="fas fa-arrow-left"></i>
+      Regresar
+    </button>
+  </div>
+</div>
+
+<div class="row animated fadeIn faster mt-3">
+  <div class="col">
+    <form (ngSubmit)="guardar(f)" #f="ngForm">
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Id</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.id"
+                 name="id"
+                 placeholder="id" disabled>
+          <small class="form-text text-muted">Este campo es autogenerado</small>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Nombre</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.name"
+                 name="name"
+                 placeholder="Nombre" required>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Apellidos</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control"
+                 [(ngModel)]="usuario.lastname"
+                 name="lastname"
+                 placeholder="Apellidos">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Edad</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control"
+                 [(ngModel)]="usuario.age"
+                 name="age"
+                 placeholder="Edad">
+        </div>
+      </div>
+      <hr>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary w-25">
+          <i class="fas fa-save"></i>
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
